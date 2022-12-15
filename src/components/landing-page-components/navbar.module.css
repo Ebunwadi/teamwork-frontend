@@ -4,10 +4,9 @@
 }
 
 .navbar {
-  /* border: 2px solid blue; */
   box-sizing: border-box;
   position: absolute;
-  width: 1512px;
+  /* width: 1512px; */
   height: 100px;
   left: 0px;
   top: 0px;
@@ -19,7 +18,7 @@
   position: absolute;
   width: 241px;
   height: 40px;
-  left: 200px;
+  left: 100px;
   top: 30px;
   font-family: 'Poppins';
   font-style: normal;
@@ -37,7 +36,7 @@
   position: absolute;
   width: 60px;
   height: 20px;
-  left: 536px;
+  left: 436px;
   top: 38px;
   font-family: 'Poppins';
   font-style: normal;
@@ -56,7 +55,7 @@
   position: absolute;
   width: 72px;
   height: 20px;
-  left: 672px;
+  left: 572px;
   top: 40px;
   font-family: 'Poppins';
   font-style: normal;
@@ -74,7 +73,7 @@
   position: absolute;
   width: 128px;
   height: 20px;
-  left: 810px;
+  left: 710px;
   top: 40px;
   font-family: 'Poppins';
   font-style: normal;
@@ -92,7 +91,7 @@
   position: absolute;
   width: 63px;
   height: 20px;
-  left: 1004px;
+  left: 904px;
   top: 41px;
   font-family: 'Poppins';
   font-style: normal;
@@ -111,13 +110,13 @@
   width: 177px;
   height: 51px;
   text-decoration: none;
-  left: 1220px;
+  left: 1120px;
   top: 24px;
   background: #7990E1;
   border-radius: 5px;
 }
 
-.login-text{
+.loginText{
   position: absolute;
   width: 83px;
   height: 20px;

@@ -1,17 +1,16 @@
 import React from 'react'
-// import '../../pages/Landing-page/'
-import './page.css'
-import image from './bro.jpg'
+import styles from './page.module.css'
+import image from '../Assets/bro.jpg'
 
 function Main() {
   return (
     <div>
-      <div className="right">
+      <div className={styles.right}>
         <p>Connect with your colleagues, <br></br>share information and <br /> yield more result</p>
       </div>
 
-      <div className="left">
-        <img src={image} alt="display" className='img' />
+      <div className={styles.left}>
+        <img src={image} alt="display" className={styles.img} />
       </div>
     </div>
   )

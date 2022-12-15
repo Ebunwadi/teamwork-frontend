@@ -3,7 +3,7 @@
   position: absolute;
   width: 610px;
   height: 180px;
-  left: 208px;
+  left: 108px;
   top: 247px;
   font-family: 'Poppins';
   font-style: normal;
@@ -17,7 +17,7 @@
 
 .left{
   position: absolute;
-  left: 60.25%;
+  left: 50.25%;
   right: 10.25%;
   top: 27.43%;
   bottom: 18.1%;
@@ -26,5 +26,5 @@
 }
 
 .img{
-  width: 100%;
+  width: 90%;
 }
