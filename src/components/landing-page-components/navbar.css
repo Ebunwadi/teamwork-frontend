@@ -1,0 +1,135 @@
+/* landing page styling */
+.landing-page{
+  background: #F5F5F5;
+}
+
+.navbar {
+  /* border: 2px solid blue; */
+  box-sizing: border-box;
+  position: absolute;
+  width: 1512px;
+  height: 100px;
+  left: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  list-style-type: none;
+}
+
+.staffcon {
+  position: absolute;
+  width: 241px;
+  height: 40px;
+  left: 200px;
+  top: 30px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 100%;
+  /* identical to box height, or 40px */
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: #7990E1;
+}
+
+.home{
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  left: 536px;
+  top: 38px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: #455A64;
+}
+
+.upload{
+  position: absolute;
+  width: 72px;
+  height: 20px;
+  left: 672px;
+  top: 40px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: #455A64;
+}
+
+.notify{
+  position: absolute;
+  width: 128px;
+  height: 20px;
+  left: 810px;
+  top: 40px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: #455A64;
+}
+
+.profile{
+  position: absolute;
+  width: 63px;
+  height: 20px;
+  left: 1004px;
+  top: 41px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: #455A64;
+}
+
+.login{
+  position: absolute;
+  width: 177px;
+  height: 51px;
+  text-decoration: none;
+  left: 1220px;
+  top: 24px;
+  background: #7990E1;
+  border-radius: 5px;
+}
+
+.login-text{
+  position: absolute;
+  width: 83px;
+  height: 20px;
+  left: 50px;
+  top: 15px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}

@@ -1,0 +1,30 @@
+
+.right{
+  position: absolute;
+  width: 610px;
+  height: 180px;
+  left: 208px;
+  top: 247px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 150%;
+  /* or 60px */
+  letter-spacing: -0.02em;
+  color: #455A64;
+}
+
+.left{
+  position: absolute;
+  left: 60.25%;
+  right: 10.25%;
+  top: 27.43%;
+  bottom: 18.1%;
+  background: #FFFFFF;
+  opacity: 0.7;
+}
+
+.img{
+  width: 100%;
+}
