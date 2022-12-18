@@ -31,7 +31,9 @@
   text-decoration: none;
   color: #7990E1;
 }
-
+.navItems{
+  display: flex;
+}
 .home{
   position: absolute;
   width: 60px;
@@ -131,4 +133,79 @@
   text-align: center;
   letter-spacing: -0.02em;
   color: #FFFFFF;
+}
+.button {
+  position: absolute;
+  left: 1150px;
+  padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+
+@media screen and (max-width: 700px) {
+  .navbar{
+    display: flex;
+    align-items: center;
+  }
+  .navItems {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+    position: fixed;
+    top: 90px;
+    right: -300px;
+    height: 100vh;
+    width: 370px;
+		transition: 1s;
+  }
+  .button {
+    visibility: visible;
+		opacity: 1;
+    left: 370px;
+  }
+  .staffcon{
+    left: 20px;
+  }
+  .navbar{
+    width: 100vw;
+  }
+
+  .open{
+  position: absolute;
+  /* left: 400px; */
+  top: 40px;
+  } 
+  .home{
+    left: 370px;
+  }
+  .upload{
+    top: 80px;
+    left: 370px;
+  }
+  .notify{
+    top: 120px;
+    left: 360px;
+  }
+  .profile{
+    top: 160px;
+    left: 370px;
+  }
+  .login{
+    width: 110px;
+    height: 30px;
+    top: 200px;
+    left: 370px;
+  }
+  .loginText{
+    top: 3px;
+    left: 0px;
+  }
 }
