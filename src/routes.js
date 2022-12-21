@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import LandingPage from "./components/Pages/LandingPage";
+import LandingPage from "./pages/Landing-page/LandingPage";
 
 export default createBrowserRouter([
   {

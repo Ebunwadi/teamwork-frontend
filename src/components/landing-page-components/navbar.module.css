@@ -1,0 +1,211 @@
+/* landing page styling */
+.landing-page{
+  background: #F5F5F5;
+}
+
+.navbar {
+  box-sizing: border-box;
+  position: absolute;
+  /* width: 1512px; */
+  height: 100px;
+  left: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  list-style-type: none;
+}
+
+.staffcon {
+  position: absolute;
+  width: 241px;
+  height: 40px;
+  left: 100px;
+  top: 30px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 100%;
+  /* identical to box height, or 40px */
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: #7990E1;
+}
+.navItems{
+  display: flex;
+}
+.home{
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  left: 436px;
+  top: 38px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: #455A64;
+}
+
+.upload{
+  position: absolute;
+  width: 72px;
+  height: 20px;
+  left: 572px;
+  top: 40px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: #455A64;
+}
+
+.notify{
+  position: absolute;
+  width: 128px;
+  height: 20px;
+  left: 710px;
+  top: 40px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: #455A64;
+}
+
+.profile{
+  position: absolute;
+  width: 63px;
+  height: 20px;
+  left: 904px;
+  top: 41px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: #455A64;
+}
+
+.login{
+  position: absolute;
+  width: 177px;
+  height: 51px;
+  text-decoration: none;
+  left: 1120px;
+  top: 24px;
+  background: #7990E1;
+  border-radius: 5px;
+}
+
+.loginText{
+  position: absolute;
+  width: 83px;
+  height: 20px;
+  left: 50px;
+  top: 15px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+.button {
+  position: absolute;
+  left: 1150px;
+  padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+
+@media screen and (max-width: 700px) {
+  .navbar{
+    display: flex;
+    align-items: center;
+  }
+  .navItems {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+    position: fixed;
+    top: 90px;
+    right: -300px;
+    height: 100vh;
+    width: 370px;
+		transition: 1s;
+  }
+  .button {
+    visibility: visible;
+		opacity: 1;
+    left: 370px;
+  }
+  .staffcon{
+    left: 20px;
+  }
+  .navbar{
+    width: 100vw;
+  }
+
+  .open{
+  position: absolute;
+  /* left: 400px; */
+  top: 40px;
+  } 
+  .home{
+    left: 370px;
+  }
+  .upload{
+    top: 80px;
+    left: 370px;
+  }
+  .notify{
+    top: 120px;
+    left: 360px;
+  }
+  .profile{
+    top: 160px;
+    left: 370px;
+  }
+  .login{
+    width: 110px;
+    height: 30px;
+    top: 200px;
+    left: 370px;
+  }
+  .loginText{
+    top: 3px;
+    left: 0px;
+  }
+}
