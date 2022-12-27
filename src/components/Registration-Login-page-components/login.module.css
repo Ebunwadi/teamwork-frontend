@@ -1,0 +1,126 @@
+/* h1{
+  position: absolute;
+  width: 361px;
+  height: 60px;
+  left: 476px;
+  top: 120px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #7990E1;
+} */
+
+.login{
+  position: absolute;
+  width: 400px;
+  height: 450px;
+  left: 450px;
+  top: 160px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.input{
+  box-sizing: border-box;
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  left: 50px;
+  background: #FFFFFF;
+  border: 1px solid #979A96;
+  border-radius: 10px;
+}
+
+.email{
+  box-sizing: border-box;
+  position: absolute;
+  height: 38px;
+  left: 80px;
+  background: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+.emailIcon {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  background: #636463;
+}
+
+.password {
+  box-sizing: border-box;
+  position: absolute;
+  height: 38px;
+  left: 80px;
+  background: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+.passwordIcon {
+  position: absolute;
+  left: 20px;
+  width: 10%;
+  height: 100%;
+  color: gray;
+}
+
+.eyeButton {
+  position: absolute;
+  left: 260px;
+  top: 30%;
+  /* width: 20%; */
+  /* height: 80%; */
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  top: 240px;
+  background: #7990E1;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.signIn {
+  top: 380px;
+  cursor: pointer;
+}
+
+.p {
+  position: absolute;
+  left: 100px;
+  top: 315px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 350;
+  font-size: 23px;
+  color: #979A96;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+::placeholder {
+  position: absolute;
+  top: 35%;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    position: absolute;
+    left: -400px;
+    z-index: -1;
+  }
+  h1 {
+    display: none;
+  }
+}

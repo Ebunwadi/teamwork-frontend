@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import LandingPage from "./pages/Landing-page/LandingPage";
+import LandingPage from "./pages/LandingPage";
+import Login from "./pages/Login";
 
 export default createBrowserRouter([
   {
@@ -11,7 +12,13 @@ export default createBrowserRouter([
         element: (
             <LandingPage />
         ),
-      }
+      },
+      {
+        path: "/login",
+        element: (
+            <Login />
+        ),
+      },
     ],
   },
 ]);
