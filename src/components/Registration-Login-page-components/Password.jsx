@@ -4,8 +4,6 @@ import {RiLockPasswordLine} from 'react-icons/ri'
 import {AiOutlineEye} from 'react-icons/ai'
 import {AiOutlineEyeInvisible} from 'react-icons/ai'
 import {useNavigate} from "react-router-dom";
-import Cookie from 'js-cookie'
-
 
 function Password() {
   const navigate = useNavigate();
@@ -21,7 +19,6 @@ function Password() {
       [e.target.name] : e.target.value
   })
   }
-  const token = Cookie.get('token')
   const handleSubmit = async (e) => {
     e.preventDefault()
       const res = await fetch('https://ebubeproject.onrender.com/api/v1/auth/reset-password', {
@@ -29,7 +26,6 @@ function Password() {
       body: JSON.stringify(form),
       headers: {
         "content-type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
     });
 
