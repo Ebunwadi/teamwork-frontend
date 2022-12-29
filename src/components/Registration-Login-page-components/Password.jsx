@@ -71,7 +71,7 @@ function Password() {
             className={styles.password} 
             autoComplete = 'off'
             name='password'
-            value={form.password}
+            value={form.confirmPassword}
             onChange={handleChange}
           />
           <RiLockPasswordLine className={styles.passwordIcon} />
