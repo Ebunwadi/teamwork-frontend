@@ -1,18 +1,21 @@
-/* h1{
+h1{
   position: absolute;
   width: 361px;
   height: 60px;
   left: 476px;
-  top: 120px;
+  top: 100px;
   font-family: 'Poppins';
   font-style: normal;
-  font-weight: 800;
-  font-size: 40px;
+  font-weight: 600;
+  font-size: 30px;
   line-height: 100%;
   text-align: center;
   letter-spacing: -0.02em;
-  color: #7990E1;
-} */
+  color: red;
+  /* border: 2px solid black;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 20px; */
+}
 
 .login{
   position: absolute;
@@ -41,7 +44,7 @@
   position: absolute;
   height: 38px;
   left: 80px;
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
   border: none;
   outline: none;
 }
@@ -106,6 +109,7 @@
   font-size: 23px;
   color: #979A96;
   opacity: 0.8;
+  text-decoration: none;
   cursor: pointer;
 }
 
