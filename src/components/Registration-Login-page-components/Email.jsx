@@ -34,8 +34,8 @@ function Email() {
     console.log(feedback);
     if (res.ok){
       if(window.confirm('A password reset link has been sent to your email')) {
-        const { token, userId } = feedback.data
-        dispatch(setUser(userId));
+        const { token, id } = feedback.data
+        dispatch(setUser(id));
         dispatch(setToken(token));
         navigate('/')
       }
