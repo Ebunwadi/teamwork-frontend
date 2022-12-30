@@ -35,7 +35,7 @@ export default createBrowserRouter([
         ),
       },
       {
-        path: "/resetPassword",
+        path: "/resetPassword/:id/:token",
         element: (
             <ResetPassword />
         ),
