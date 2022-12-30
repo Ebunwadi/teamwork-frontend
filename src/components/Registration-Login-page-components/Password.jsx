@@ -33,7 +33,7 @@ function Password() {
     });
 
     const feedback = await res.json();
-    console.log(feedback);
+    // console.log(feedback);
     if (res.ok){
       const {message} = feedback.data
       if(window.confirm(`${message}`)) {
