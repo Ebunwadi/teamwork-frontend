@@ -4,11 +4,11 @@ import {RiLockPasswordLine} from 'react-icons/ri'
 import {AiOutlineEye} from 'react-icons/ai'
 import {AiOutlineEyeInvisible} from 'react-icons/ai'
 import {useNavigate, useParams} from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 function Password() {
-  const token = useSelector((state) => state.auth.token)
-  const id = useSelector((state) => state.auth.user)
+  // const token = useSelector((state) => state.auth.token)
+  // const id = useSelector((state) => state.auth.user)
   const navigate = useNavigate();
   let params = useParams();
   const [isShown, setIsShown] = useState(false);
@@ -32,7 +32,7 @@ function Password() {
         "content-type": "application/json",
       },
     });
-  console.log(token, id);
+  // console.log(token, id);
 
     const feedback = await res.json();
     console.log(feedback);
