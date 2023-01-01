@@ -31,6 +31,7 @@ function Password() {
         "content-type": "application/json",
       },
     });
+  console.log(token, id);
 
     const feedback = await res.json();
     console.log(feedback);

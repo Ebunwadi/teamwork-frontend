@@ -31,7 +31,6 @@ function Email() {
     });
 
     const feedback = await res.json();
-    console.log(feedback);
     if (res.ok){
       if(window.confirm('A password reset link has been sent to your email')) {
         const { token, id } = feedback.data

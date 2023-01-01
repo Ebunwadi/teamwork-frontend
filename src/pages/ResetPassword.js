@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Password from '../components/Registration-Login-page-components/Password'
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 
 function ResetPassword() {
