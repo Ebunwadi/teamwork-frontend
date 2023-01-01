@@ -3,13 +3,14 @@ import styles from './login.module.css'
 import {RiLockPasswordLine} from 'react-icons/ri'
 import {AiOutlineEye} from 'react-icons/ai'
 import {AiOutlineEyeInvisible} from 'react-icons/ai'
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Password() {
   const token = useSelector((state) => state.auth.token)
   const id = useSelector((state) => state.auth.user)
   const navigate = useNavigate();
+  let params = useParams();
   const [isShown, setIsShown] = useState(false);
   const initialForm = {
     password: '',
@@ -24,7 +25,7 @@ function Password() {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
-      const res = await fetch(`https://ebubeproject.onrender.com/api/v1/auth/reset-password/${id}/${token}`, {
+      const res = await fetch(`https://ebubeproject.onrender.com/api/v1/auth/reset-password/${params.id}/${params.token}`, {
       method: "PATCH",
       body: JSON.stringify(form),
       headers: {
