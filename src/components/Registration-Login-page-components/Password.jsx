@@ -33,7 +33,7 @@ const password = watch('password')
   const handleSubmit = async (e) => {
     e.preventDefault()
       const res = await fetch(`https://ebubeproject.onrender.com/api/v1/auth/reset-password/${params.id}/${params.token}`, {
-      method: "PATCH",
+      method: "POST",
       mode: 'no-cors',
       body: JSON.stringify(password),
       headers: {
