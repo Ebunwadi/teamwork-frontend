@@ -11,30 +11,30 @@ function Password() {
   const params = useParams();
   const [isShown, setIsShown] = useState(false);
   const [isPasswordShown, setIsPasswordShown] = useState(false);
-  // const initialForm = {
-  //   password: '',
-  //   confirmPassword: ''
-  // }
-  // const [form, setForm] = useState(initialForm)
-  // const handleChange = (e) => {
-  //   setForm({
-  //     ...form,
-  //     [e.target.name] : e.target.value
-  // })
-  // }
+  const initialForm = {
+    password: '',
+    confirmPassword: ''
+  }
+  const [form, setForm] = useState(initialForm)
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name] : e.target.value
+  })
+  }
 
   // handle form events
-  const { register, watch, formState: { errors } } = useForm({
-    mode:'onTouched'
-});
+//   const { register, watch, formState: { errors } } = useForm({
+//     mode:'onTouched'
+// });
 
-const password = watch('password')
+// const password = watch('password')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
       const res = await fetch(`https://ebubeproject.onrender.com/api/v1/auth/reset-password/${params.id}/${params.token}`, {
       method: "POST",
-      body: JSON.stringify(password),
+      body: JSON.stringify(form),
       headers: {
         "content-type": "application/json",
       },
@@ -64,23 +64,23 @@ const password = watch('password')
             className={styles.email} 
             autoComplete = 'off'
             name='password'
-            // value={form.password}
-            // onChange={handleChange}
-            {...register("password", { required: 'Password is required',
-              pattern:{
+            value={form.password}
+            onChange={handleChange}
+            // {...register("password", { required: 'Password is required',
+              // pattern:{
                 // eslint-disable-next-line
                 // value:/^(\S)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])[a-zA-Z0-9~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]{10,16}$/,
                 // message:'Password should include at least one uppercase, one numeric value and one special character'
-              },
-              minLength:{
-                value:4,
-                message:'Minimum Required length is 4'
-              },
-              maxLength: {
-                value: 20,
-                message: "Maximum Required length is 20",
-                },
-            })}
+            //   },
+            //   minLength:{
+            //     value:4,
+            //     message:'Minimum Required length is 4'
+            //   },
+            //   maxLength: {
+            //     value: 20,
+            //     message: "Maximum Required length is 20",
+            //     },
+            // })}
           />
           <RiLockPasswordLine className={styles.passwordIcon} />
           <div
@@ -89,7 +89,7 @@ const password = watch('password')
           </div>
         </div>
         <br /><br /><br />
-        {errors.password && <span className={styles.passwordError}>{errors.password.message}</span>}
+        {/* {errors.password && <span className={styles.passwordError}>{errors.password.message}</span>} */}
           <br /><br />
           {/* confirm password */}
         <div className={styles.input}>
@@ -99,16 +99,16 @@ const password = watch('password')
             className={styles.password} 
             autoComplete = 'off'
             name='password'
-            // value={form.confirmPassword}
-            // onChange={handleChange}
+            value={form.confirmPassword}
+            onChange={handleChange}
             onPaste={(e)=>{
               e.preventDefault()
               return false;
             }}
-            {...register("confirmPassword", { required: 'confirm password is required',
-              validate: (value) =>
-              value === password || "The passwords do not match",
-            })}
+            // {...register("confirmPassword", { required: 'confirm password is required',
+            //   validate: (value) =>
+            //   value === password || "The passwords do not match",
+            // })}
           />
           <RiLockPasswordLine className={styles.passwordIcon} />
           <div
@@ -117,7 +117,7 @@ const password = watch('password')
           </div>
         </div>
         <br /><br /><br />
-        {errors.confirmPassword && <span className={styles.passwordError}>{errors.confirmPassword.message}</span>}
+        {/* {errors.confirmPassword && <span className={styles.passwordError}>{errors.confirmPassword.message}</span>} */}
         <br /><br /><br />
         <button className={`${styles.input} ${styles.btnn}`} type = 'submit'>Reset Password</button>
       </form>
