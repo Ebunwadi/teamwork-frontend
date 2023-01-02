@@ -2,13 +2,8 @@ import React, { useState } from 'react'
 import styles from './login.module.css'
 import emailIcon from '../Assets/email.jpg'
 import {useNavigate} from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setUser, setToken } from "../../store/auth";
-
-
 
 function Email() {
-  const dispatch = useDispatch()
   const navigate = useNavigate();
   const initialForm = {
     email: '',
@@ -33,9 +28,6 @@ function Email() {
     const feedback = await res.json();
     if (res.ok){
       if(window.confirm('A password reset link has been sent to your email')) {
-        const { token, id } = feedback.data
-        dispatch(setUser(id));
-        dispatch(setToken(token));
         navigate('/')
       }
     }else {

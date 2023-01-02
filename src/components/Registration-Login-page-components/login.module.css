@@ -94,6 +94,22 @@ h1{
   color: white;
 }
 
+.btnn{
+  /* top: 240px; */
+  background: #7990E1;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.passwordError{
+  color: red;
+  position: absolute;
+  left: 50px;
+  font: italic;
+}
+
 .signIn {
   top: 380px;
   cursor: pointer;
@@ -123,8 +139,5 @@ h1{
     position: absolute;
     left: -400px;
     z-index: -1;
-  }
-  h1 {
-    display: none;
   }
 }
