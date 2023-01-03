@@ -11,7 +11,6 @@ function Password() {
   const [isShown, setIsShown] = useState(false);
   const initialForm = {
     password: '',
-    confirmPassword: ''
   }
   const [form, setForm] = useState(initialForm)
   const handleChange = (e) => {
