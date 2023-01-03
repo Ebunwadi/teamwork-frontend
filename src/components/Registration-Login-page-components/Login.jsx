@@ -63,14 +63,14 @@ function Login() {
     <div className={styles.container}>
       {/* <h1>STAFFCON</h1> */}
       {errormsg.isError && <h1>{errormsg.error}</h1>}
-      <form className={styles.login} autoComplete = 'off' onSubmit={handleSubmit}>
+      <form className={styles.login} onSubmit={handleSubmit}>
         <br /><br />
         <div className={styles.input}>
           <input 
             type="email" 
             placeholder="Email" 
             className={styles.email} 
-            autoComplete = 'off'
+            // autoComplete = 'off'
             name='email'
             value={form.email}
             onChange={handleChange}
@@ -83,7 +83,7 @@ function Login() {
             type={isShown? 'text': 'password'} 
             placeholder="Password" 
             className={styles.password} 
-            autoComplete = 'off'
+            // autoComplete = 'off'
             name='password'
             value={form.password}
             onChange={handleChange}

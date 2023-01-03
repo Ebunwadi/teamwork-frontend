@@ -37,7 +37,7 @@ function Email() {
     }
   return (
     <div>
-      <form className={styles.login} autoComplete = 'off' onSubmit={handleSubmit}>
+      <form className={styles.login} onSubmit={handleSubmit}>
         <br /><br /><br />
         <br /><br /><br />
         <div className={styles.input}>
@@ -45,7 +45,7 @@ function Email() {
             type="email" 
             placeholder="Enter your email" 
             className={styles.email} 
-            autoComplete = 'off'
+            // autoComplete = 'off'
             name='email'
             value={form.email}
             onChange={handleChange}

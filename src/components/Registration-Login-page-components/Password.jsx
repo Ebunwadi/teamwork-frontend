@@ -51,7 +51,7 @@ function Password() {
             type={isShown? 'text': 'password'} 
             placeholder="Enter your new password" 
             className={styles.email} 
-            autoComplete = 'off'
+            // autoComplete = 'off'
             name='password'
             value={form.password}
             onChange={handleChange}
