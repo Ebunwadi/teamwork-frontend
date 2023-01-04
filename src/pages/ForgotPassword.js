@@ -1,10 +1,10 @@
 import React from 'react'
-import Email from '../components/Registration-Login-page-components/Email'
+import ForgetPassword from '../components/Registration-Login-page-components/ForgetPassword'
 
 const ForgotPassword = () => {
   return (
     <div>
-      <Email />
+      <ForgetPassword />
     </div>
   )
 }

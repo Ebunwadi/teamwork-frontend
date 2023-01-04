@@ -5,7 +5,7 @@ import {AiOutlineEye} from 'react-icons/ai'
 import {AiOutlineEyeInvisible} from 'react-icons/ai'
 import {useNavigate, useParams} from "react-router-dom";
 
-function Password() {
+function NewPassword() {
   const navigate = useNavigate();
   let params = useParams();
   const [isShown, setIsShown] = useState(false);
@@ -42,7 +42,7 @@ function Password() {
     }
     }
   return (
-    <div>
+    <div className={styles.container}>
       <form className={styles.login} autoComplete = 'off' onSubmit={handleSubmit}>
         <br /><br /><br />
         <br /><br /><br />
@@ -69,4 +69,4 @@ function Password() {
   )
 }
 
-export default Password
+export default NewPassword

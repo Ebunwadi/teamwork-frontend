@@ -3,7 +3,7 @@ import styles from './login.module.css'
 import emailIcon from '../Assets/email.jpg'
 import {useNavigate} from "react-router-dom";
 
-function Email() {
+function ForgetPassword() {
   const navigate = useNavigate();
   const initialForm = {
     email: '',
@@ -36,7 +36,7 @@ function Email() {
     }
     }
   return (
-    <div>
+    <div className={styles.container}>
       <form className={styles.login} onSubmit={handleSubmit}>
         <br /><br /><br />
         <br /><br /><br />
@@ -59,4 +59,4 @@ function Email() {
   )
 }
 
-export default Email
+export default ForgetPassword

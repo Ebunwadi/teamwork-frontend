@@ -1,10 +1,10 @@
 import React from 'react'
-import Password from '../components/Registration-Login-page-components/Password'
+import NewPassword from '../components/Registration-Login-page-components/NewPassword'
 
 function ResetPassword() {
   return (
     <div>
-      <Password />
+      <NewPassword />
     </div>
   )
 }
