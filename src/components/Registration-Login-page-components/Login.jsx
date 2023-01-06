@@ -1,13 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './login.module.css'
 import emailIcon from '../Assets/email.jpg'
 import {RiLockPasswordLine} from 'react-icons/ri'
 import {AiOutlineEye} from 'react-icons/ai'
 import {AiOutlineEyeInvisible} from 'react-icons/ai'
-import Cookie from 'js-cookie'
 import {Link, useNavigate} from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../store/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from 'react-toastify'
+import { login, reset } from "../../reduxToolKit/features/authSlice";
+import Spinner from '../loadingSpinner/Spinner'
 
 
 function Login() {
@@ -16,11 +17,6 @@ function Login() {
 
   //for password eye icon toggle
   const [isShown, setIsShown] = useState(false);
-  //login error message
-  const [errormsg, setErrormsg] = useState({
-    isError: false,
-    error: ''
-  })
 
   const initialForm = {
     email: '',
@@ -34,35 +30,35 @@ function Login() {
   })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-      const res = await fetch('https://ebubeproject.onrender.com/api/v1/auth/login-user', {
-      method: "POST",
-      body: JSON.stringify(form),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-    const feedback = await res.json();
+  
+  const { userData, isLoading, isError, isSuccess, errorMsg } = useSelector(
+    (state) => state.auth
+  )
 
-    if (res.ok) {
-    const {token, payload} = feedback.data
-      Cookie.set("token", token);
-      dispatch(setUser(payload));
-      navigate("/dashboard");        
-    }  else {
-      const {error} = feedback
-      setErrormsg({
-        isError: true,
-        error: `error: ${error}!`
-      })
+  useEffect(() => {
+    if (isError) {
+      toast.error(`Error: ${errorMsg}!`)
     }
 
+    if (isSuccess) {
+      navigate('/dashboard')
+    }
+
+    dispatch(reset())
+  }, [userData, isError, isSuccess, errorMsg, navigate, dispatch])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+     
+    dispatch(login(form))
   } 
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
   return (
     <div className={styles.container}>
-      {/* <h1>STAFFCON</h1> */}
-      {errormsg.isError && <h1>{errormsg.error}</h1>}
       <form className={styles.login} onSubmit={handleSubmit}>
         <br /><br />
         <div className={styles.input}>
@@ -70,7 +66,6 @@ function Login() {
             type="email" 
             placeholder="Email" 
             className={styles.email} 
-            // autoComplete = 'off'
             name='email'
             value={form.email}
             onChange={handleChange}
@@ -83,7 +78,6 @@ function Login() {
             type={isShown? 'text': 'password'} 
             placeholder="Password" 
             className={styles.password} 
-            // autoComplete = 'off'
             name='password'
             value={form.password}
             onChange={handleChange}

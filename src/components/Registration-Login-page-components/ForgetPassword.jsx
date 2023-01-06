@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './login.module.css'
 import emailIcon from '../Assets/email.jpg'
+import { forgotPassword, reset } from '../../reduxToolKit/features/authSlice';
 import {useNavigate} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from 'react-toastify'
+import Spinner from '../loadingSpinner/Spinner'
+
 
 function ForgetPassword() {
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const initialForm = {
     email: '',
   }
@@ -14,27 +20,31 @@ function ForgetPassword() {
       [e.target.name] : e.target.value
   })
   }
+  const { isLoading, isError, isSuccess, errorMsg } = useSelector(
+    (state) => state.auth
+  )
+  useEffect(() => {
+    if (isError) {
+      toast.error(`Error: ${errorMsg}`)
+    }
 
+    if (isSuccess) {
+      toast.success('A password reset link has been sent to your email.')
+      navigate('/login')
+    }
+
+    dispatch(reset())
+  }, [isError, isSuccess, errorMsg, navigate, dispatch])
+  
   const handleSubmit = async (e) => {
     e.preventDefault()
-      const res = await fetch('https://ebubeproject.onrender.com/api/v1/auth/forgot-password', {
-      method: "POST",
-      body: JSON.stringify(form),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    dispatch(forgotPassword(form))
+    }
 
-    const feedback = await res.json();
-    if (res.ok){
-      if(window.confirm('A password reset link has been sent to your email')) {
-        navigate('/')
-      }
-    }else {
-      const {error} = feedback;
-      alert(error);
+    if (isLoading) {
+      return <Spinner />
     }
-    }
+
   return (
     <div className={styles.container}>
       <form className={styles.login} onSubmit={handleSubmit}>
