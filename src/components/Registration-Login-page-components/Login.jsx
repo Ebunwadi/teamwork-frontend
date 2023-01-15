@@ -7,11 +7,14 @@ import {AiOutlineEyeInvisible} from 'react-icons/ai'
 import {Link, useNavigate} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from 'react-toastify'
-import { login, reset } from "../../reduxToolKit/features/authSlice";
+import { login, reset } from '../../redux/actions/auth'
 import Spinner from '../loadingSpinner/Spinner'
 
 
 function Login() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { isLoggedIn, isError, message} = useSelector(state => state.auth);
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -30,26 +33,25 @@ function Login() {
   })
   }
 
-  
-  const { userData, isLoading, isError, isSuccess, errorMsg } = useSelector(
-    (state) => state.auth
-  )
-
   useEffect(() => {
-    if (isError) {
-      toast.error(`Error: ${errorMsg}!`)
+
+    if(isError) {
+      setIsLoading(false)
+      toast.error(`Error: ${message}!`)
     }
 
-    if (isSuccess) {
+    if (isLoggedIn) {
+      setIsLoading(false)
       navigate('/dashboard')
     }
 
     dispatch(reset())
-  }, [userData, isError, isSuccess, errorMsg, navigate, dispatch])
+  }, [isLoggedIn, isError, message, navigate, dispatch])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-     
+    setIsLoading(true)
+
     dispatch(login(form))
   } 
 

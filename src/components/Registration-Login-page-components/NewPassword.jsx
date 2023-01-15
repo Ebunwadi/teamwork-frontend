@@ -4,7 +4,7 @@ import {RiLockPasswordLine} from 'react-icons/ri'
 import {AiOutlineEye} from 'react-icons/ai'
 import {AiOutlineEyeInvisible} from 'react-icons/ai'
 import { toast } from 'react-toastify'
-import { ResetPassword, reset } from '../../reduxToolKit/features/authSlice';
+import { ResetPassword, reset } from '../../redux/actions/auth';
 import {useNavigate} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from '../loadingSpinner/Spinner'
@@ -12,7 +12,7 @@ import Spinner from '../loadingSpinner/Spinner'
 function NewPassword() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+  const [isLoading, setIsLoading] = useState(false);
   const [isShown, setIsShown] = useState(false);
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const initialForm = {
@@ -27,27 +27,31 @@ function NewPassword() {
   })
   }
 
-  const { isLoading, isError, isSuccess, errorMsg } = useSelector(
+  const {isError, isSuccess, message } = useSelector(
     (state) => state.auth
   )
   useEffect(() => {
     if (isError) {
-      toast.error(`Error: ${errorMsg}`)
+      setIsLoading(false)
+      toast.error(`Error: ${message}`)
+      console.log(message);
     }
 
     if (isSuccess) {
+      setIsLoading(false)
       toast.success('Password Successfully Updated.')
       navigate('/login')
     }
 
     dispatch(reset())
-  }, [isError, isSuccess, errorMsg, navigate, dispatch])
+  }, [isError, isSuccess, message, navigate, dispatch])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     if(form.password !== form.confirmPassword) {
       toast.error('passwords do not match!')
     }
+    setIsLoading(true)
     dispatch(ResetPassword(form))
       
     }
@@ -59,8 +63,7 @@ function NewPassword() {
   return (
     <div className={styles.container}>
       <form className={styles.login} autoComplete = 'off' onSubmit={handleSubmit}>
-        <br /><br /><br />
-        <br /><br /><br />
+        <br /><br /><br /><br /><br /><br />
         <div className={styles.input}>
           <input 
             type={isShown? 'text': 'password'} 

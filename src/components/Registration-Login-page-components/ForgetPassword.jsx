@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from './login.module.css'
 import emailIcon from '../Assets/email.jpg'
-import { forgotPassword, reset } from '../../reduxToolKit/features/authSlice';
+import { forgotPassword, reset } from '../../redux/actions/auth';
 import {useNavigate} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from 'react-toastify'
@@ -9,6 +9,7 @@ import Spinner from '../loadingSpinner/Spinner'
 
 
 function ForgetPassword() {
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const initialForm = {
@@ -20,24 +21,28 @@ function ForgetPassword() {
       [e.target.name] : e.target.value
   })
   }
-  const { isLoading, isError, isSuccess, errorMsg } = useSelector(
+  const { isError, isSuccess, message } = useSelector(
     (state) => state.auth
   )
   useEffect(() => {
     if (isError) {
-      toast.error(`Error: ${errorMsg}`)
+      setIsLoading(false)
+      toast.error(`Error: ${message}`)
     }
 
     if (isSuccess) {
+      setIsLoading(false)
       toast.success('A password reset link has been sent to your email.')
       navigate('/login')
     }
 
     dispatch(reset())
-  }, [isError, isSuccess, errorMsg, navigate, dispatch])
+  }, [isError, isSuccess, message, navigate, dispatch])
   
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
+
     dispatch(forgotPassword(form))
     }
 

@@ -13,14 +13,15 @@ const login = async(form) => {
     },
   });
   const feedback = await res.json();
+  const { data } = feedback
 
   if (res.ok) {
-  const { data } = feedback
     localStorage.setItem('userData', JSON.stringify(data));
   } else {
     const {error} = feedback
     throw new Error(error)
   }
+  return data
 }
 
 // Logout user
@@ -49,7 +50,7 @@ const forgotPassword = async (form) => {
 const ResetPassword = async (form) => {
   const params = useParams();
   const res = await fetch(`${API_URL}/reset-password/${params.id}/${params.token}`, {
-    method: "POST",
+    method: "PATCH",
     body: JSON.stringify(form),
     headers: {
       "content-type": "application/json",

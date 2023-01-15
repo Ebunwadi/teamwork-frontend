@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaTimes } from 'react-icons/fa'
-import { reset, logout } from '../../reduxToolKit/features/authSlice'
+// import { reset, logout } from '../../reduxToolKit/features/authSlice'
+import { logout } from '../../redux/actions/auth'
 
 function Navbar() {
   const navigate = useNavigate()
@@ -13,7 +14,6 @@ function Navbar() {
 
   const onLogout = () => {
     dispatch(logout())
-    dispatch(reset())
     navigate('/login')
   }
   const [isOpen, setIsOpen] = useState(false);
